@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        alert(1==2);
+        alert(1=='1');//true
+
+        //'===' -> 좌항과 우항이 정확하게 같을 때 true, 다르면 false
+        //'--'는 거소 같은 수를 표현하더라도 데이터형이 같은 경우만 같다고 판단
+        alert(1==='1');//false
+
+        alert(1!=2);   //true
+        alert(1!=1);  //false;
+
+        if(true){
+            alert('result : true');//result : true출력
+        }
+
+        if(false){
+            alert('result : true');//아무것도 출력 안함.
+        }
+
+        if(true){
+            alert(1);
+            alert(2);
+            alert(3);
+            alert(4);
+        }
+        else alert(5);
+
+        //변수, 조건문 사용
+        id = prompt('아이디를 입력해주세요.');
+        if(id=='suhyeon'){
+            password = prompt('비밀번호를 입력해주세요.');
+            if(password==='1234'){
+                alert('인증 했습니다.');
+            } else {
+                alert('인증에 실패 했습니다.');
+            }
+        } else {
+            alert('인증에 실패 했습니다.');
+        }
+
+        //&& 논리 연산자 사용
+        id = prompt('아이디를 입력해주세요.');
+        password=prompt('비밀번호를 입력해주세요.');
+        if(id=='suhyeon'&&password=='1234'){
+            alert('인증 했습니다.');
+        }
+        else
+            alert('인증에 실패했습니다.');
+
+        //|| 논리 연산자 사용
+        id = prompt('아이디를 입력해주세요.');
+        password = prompt('비밀번호를 입력해주세요.');
+        if((id==='suhyeon' || id==='k0s3y0' || id==='test') && password==='1234'){
+            alert('인증 했습니다.');
+        } else 
+            alert('인증에 실패 했습니다.');
+    </script>
+</body>
+</html>
