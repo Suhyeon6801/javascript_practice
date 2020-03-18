@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function numbering() {
+            for (var i = 0; i < 10; i++) {
+                document.write(i + '<br />');
+            }
+        }
+
+        numbering();
+
+        function get_member() {
+            return 'suhyeon';
+        }
+
+        alert(get_member());
+
+        function get_arg(arg1, arg2) {
+            return arg1 + arg2;
+        }
+
+        alert(get_arg(1, 2));
+
+        var numbering = function () {
+            i = 0;
+            while (i < 10) {
+                document.write(i);
+                i += 1;
+            }
+        }
+        
+        numbering();
+
+    </script>
+</body>
+
+</html>
