@@ -1,0 +1,45 @@
+<!--javascript를 이용해서 비동기식으로 서버와 통신하는 방, 최근엔 json많이 사용
+'비동기식'이란 여러가지 일이 동시적으로 발생한다는 뜻으로, 서버와 통신하는 동안 다른 작업을 할 수 있다-->
+
+<!--
+    $.ajax(settings):setting->객체
+    jQuery를 이용한 ajax통신의 가장 기본적인 API
+    주요속성
+        data : 서버에 전송할 데이터, key/value 형식의 객체
+        dataType : 서버가 리턴하는 데이터 타입 (xml, json, script, html)
+        type : 서버로 전송하는 데이터의 타입 (POST, GET)
+        url : 데이터를 전송할 URL
+        success : ajax통신에 성공했을 때 호출될 이벤트 핸들러
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+        <input type="text" id="msg"/>
+        <input type="button" value="get result" id="getResult" />
+        <script>
+            $('#getResult').click( function() {//id값이 result인 엘리먼트에 써준다.
+                $('#result').html('');//결과 출력, 사용자가 버튼을 클릭시 지워줌.
+                $.ajax({//javascript에서 중괄호는 객체, 
+                    url:'http://opentutorials.org/example/jquery/example.jquery.ajax.php',//->여기 막혔음;;
+                    dataType:'json',
+                    type:'POST',
+                    data:{msg:$('#msg').val()},//id값이 msg인거
+                    success:function(result){//서버가 리턴해 준거.
+                        if(result['result']==true){
+                          $('#result').html(result['msg']);//인자로 msg를 result에 전달.
+                        }
+                    }
+                });
+            })
+        </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        p {
+            margin: 0;
+            color: blue;
+        }
+
+        div,
+        p {
+            margin-left: 10px;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("form").submit(function () {//form전달 -> submit메서드 호출
+            //(사용자가 질의를 보내면 데이터가 form에 액션으로 지정된 곳으로 전달)
+            //아래로 된 이벤트핸들러 실행.
+                if ($("input:first").val() == "correct") {//:->필터, input엘리먼트 중 첫번째로 등장하는 엘리먼트 값이 correct면 
+                    $("span").text("Validated...").show();//화면에 표기.
+                    return true;//이벤트가 원래 작동하는 방식대로 작동.
+                }
+                $("span").text("Not valid!").show().fadeOut(1000);//fadeout-> 애니메이션 효과
+                return false;//이벤트는 실행되지만, 이후 작동하는 이벤트가 작동하지 않음.
+                //submit의 경우 질의를 보내지만 보내지지는 않음.
+            });
+        })
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Type 'correct' to validate.
+    </p>
+    <form action="javascript:alert('success!');">
+        <div>
+            <input type="text" />
+
+            <input type="submit" /><!--button : form에서 적용되어있는 action으로 데이터를 전송-->
+        </div>
+    </form>
+    <span></span>
+</body>
+
+</html>

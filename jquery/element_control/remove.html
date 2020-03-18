@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        p {
+            background: yellow;
+            margin: 6px 0;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Hello
+    </p>
+    how are
+    <p>
+        you?
+    </p>
+    <button>
+        Call remove() on paragraphs
+    </button>
+    <script>
+        $("button").click(function () {
+            $("p").remove();
+        });
+    </script>
+    <!--p태그의 이름을 가진 엘리먼트들을 지운다.-->
+</body>
+
+</html>

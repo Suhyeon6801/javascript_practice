@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        div {
+            background-color: #bca;
+            width: 100px;
+            border: 1px solid green;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="go">
+        &raquo; Run
+    </button>
+
+    <div id="block">
+        Hello!
+    </div>
+    <script>
+        $("#go").click( function() {
+            $("#block").animate({//디테일하게 애니메이션을 제어할 수 있음.
+                width: "300px",
+                opacity: 0.4,
+                marginLeft: "50px",
+                fontSize: "30px",
+                borderWidth: "10px"
+            }, 3000);//3초간 실행
+        });
+        </script>
+</body>
+
+</html>

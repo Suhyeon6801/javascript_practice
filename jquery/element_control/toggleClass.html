@@ -1,0 +1,44 @@
+<!--클래스 제어, toggleClass : class가 엘리먼트를 갖고 있다면 삭제, 갖고 있지 않다면 추가 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        p {
+            margin: 4px;
+            font-size: 16px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .highlight {
+            background: yellow;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="blue"> Click to toggle </p>
+    <p class="blue highlight"> highlight </p>
+    <p class="blue"> on these </p>
+    <p class="blue"> paragraphs </p>
+    <script>
+        $("p").click(function () {
+            $(this).toggleClass("highlight");
+        });
+        //p태그를 클릭하면 toggleclass실행, 
+        //hightlight라는 클래스 명을 갖고 있다면 제거, 
+        //그렇지 않다면 hightlight라는 클래스 명으로 추가
+    </script>
+</body>
+
+</html>

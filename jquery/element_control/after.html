@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <style>
+        p {
+            background:yellow;
+        }
+    </style>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <div class = "welcome"></div>
-    <div class = "welcome"></div>
-
-    <script type="text/javascript">
-        $('.welcome').html('helloword! coding everybody!').css('background-color','yellow');
-    </script>
-    
+        <p>
+            I would like to say:
+        </p>
+        <script>$("p").after("<b>Hello</b>");</script>
+        <!--p태그 옆에 b태그, 형제로 삽입-->
+    </body>
 </body>
 </html>

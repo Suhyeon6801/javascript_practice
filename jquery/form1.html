@@ -1,0 +1,31 @@
+<!--서버로 데이터를 전송하기 위한 수단, jquery는 폼을 제어하는데 필요한 이벤트와 메소드 제공-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <input type="text" />
+        <span></span>
+        <!--이벤트가 발생하면 span엘리먼트로 이벤트 이름이 insert됨.-->
+    </p>
+    <script>
+        $("input").focus( function () {//이벤트 타입 focus에 대한 핸들러
+            $(this).next("span").html('focus');//마우스를 클릭하면 focus라고 -> 엘리먼트의 형제 엘리먼트 중 span이라고 된거에 focus라는 값.
+        }).blur( function() {
+            $(this).next("span").html('blur');//focusing 해제시 blur
+        }).change(function(e){
+            alert('change!! '+$(e.target).val());//포커스를 바깥으로 빼면 change라는 alert창, element의 val값과 함께.
+        }).select(function(){
+            $(this).next('span').html('select');//입력후 선택시 select라고
+        });
+    </script>
+</body>
+</html>

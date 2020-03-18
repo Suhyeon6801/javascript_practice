@@ -1,0 +1,30 @@
+<!--속성제어, 특정한 엘리먼트 form 같은거의 value값을 리턴해줌-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        p {
+            color: blue;
+            margin: 8px;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="some text" />
+    <p>
+    </p>
+    <script>$("input").keyup(function () {//타이핑을 뗐을때 발생하는 이벤트
+            var value = $(this).val();//value값을 알아내서 value라는 변수에 저장
+            $("p").text(value);//value라는 인자를 전달, text=>텍스트의 컨텐트 영역에 전달된 인자를 세팅해줌. 
+        }).keyup();</script><!--.keyup() : trigger input엘리먼트의 이벤트 핸들러 호출, 초기값을 세팅해줄때 주로 사용-->
+        <!--input엘리먼트에 텍스트를 타이핑하면 현재 비어있는 p태그의 컨텐트로 타이핑해서 넣어줌.-->
+</body>
+
+</html>

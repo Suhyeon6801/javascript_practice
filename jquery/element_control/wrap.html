@@ -1,0 +1,36 @@
+<!--동적 제어, html 엘리먼트 제어하는 일관되고 풍부한 기능 제공-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+         div {
+                border:2px blue solid;
+                margin:2px;
+                padding:2px;
+            }
+            p {
+                background:yellow;
+                margin:2px;
+                padding:2px;
+            }
+            strong {
+                color:red;
+            }
+    </style>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <span>Span Text</span>
+    <strong>What about me?</strong>
+    <span>Another One</span>
+    <script>$("span").wrap("<div><div><p><em><b></b></em></p></div></div>");</script>
+    <!--<div><div><p><em><b> 안에 span이 감싸짐.-->
+</body>
+</html>
